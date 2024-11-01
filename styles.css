@@ -1,102 +1,102 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #222; /* Dark background for fallback */
-    color: #fff; /* White text for better contrast */
+    background-color: #222; 
+    color: #fff; 
     margin: 0;
     padding: 0;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
-    background-image: url('path/to/your/math-background.png'); /* Replace with your image path */
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the background */
+    background-image: url('path/to/your/math-background.png');
+    background-size: cover; 
+    background-position: center; 
 }
 
 .chat-container {
     width: 90%;
-    max-width: 1000px; /* Max width increased for larger display */
-    height: 90%; /* Make chat container occupy most of the height */
+    max-width: 1000px; 
+    height: 90%; 
     margin: 20px auto;
-    border: 2px solid #4caf50; /* Green color border */
+    border: 2px solid 
     border-radius: 10px;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for the chatbox */
+    background-color: rgba(255, 255, 255, 0.9); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
 }
 
 .chat-header {
-    background-color: #4caf50; /* Green color */
+    background-color: #4caf50; 
     color: #fff;
     padding: 10px;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive; /* Fun font */
+    font-family: 'Comic Sans MS', cursive; 
 }
 
 .chatbox-container {
-    flex: 1; /* Allow chatbox container to expand */
+    flex: 1; 
     display: flex;
 }
 
 .chatbox {
-    height: 100%; /* Full height for the chatbox */
+    height: 100%;
     flex: 1;
     overflow-y: auto;
     padding: 10px;
-    border-top: 2px solid #4caf50; /* Match header color */
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly less transparent for better readability */
+    border-top: 2px solid #4caf50; 
+    background-color: rgba(255, 255, 255, 0.95); 
 }
 
 .message {
     margin: 10px 0;
     padding: 10px;
     border-radius: 10px;
-    line-height: 1.5; /* Increased line height for readability */
+    line-height: 1.5; 
 }
 
 .user-message {
-    background-color: #42a5f5; /* Light blue for user messages */
+    background-color: #42a5f5; 
     text-align: right;
 }
 
 .ai-message {
-    background-color: #ffcc80; /* Light orange for AI messages */
+    background-color: #ffcc80; 
     text-align: left;
 }
 
 .robot-image {
-    flex: 0 0 250px; /* Increased fixed width for the robot image */
+    flex: 0 0 250px; 
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: rgba(255, 204, 188, 0.8); /* Light coral background for image area */
+    background-color: rgba(255, 204, 188, 0.8); 
 }
 
 .robot-image img {
-    max-width: 100%; /* Allow image to scale */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Round corners for the image */
-    border: 2px solid #4caf50; /* Border around the image */
+    max-width: 100%; 
+    height: auto;
+    border-radius: 10px; 
+    border: 2px solid #4caf50; 
 }
 
 .input-container {
     display: flex;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly less transparent for the input area */
+    background-color: rgba(255, 255, 255, 0.95); 
 }
 
 input[type="text"] {
     flex: 1;
     padding: 10px;
-    border: 1px solid #4caf50; /* Green color border */
+    border: 1px solid #4caf50; 
     border-radius: 5px;
     margin-right: 10px;
 }
 
 button {
-    background-color: #4caf50; /* Green color for button */
+    background-color: #4caf50; 
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -106,5 +106,5 @@ button {
 }
 
 button:hover {
-    background-color: #388e3c; /* Darker green on hover */
+    background-color: #388e3c; 
 }
