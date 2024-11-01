@@ -20,7 +20,6 @@ function evaluateMath(expressions) {
     const individualExpressions = expressions.split('\n').map(expr => expr.trim());
 
     for (const expr of individualExpressions) {
-        // If the line starts with "Calculate", respond accordingly
         if (expr.toLowerCase().startsWith("calculate")) {
             results.push("Math helper is on! I'm ready to answer your calculations. Please enter your expressions below: ");
             continue;
