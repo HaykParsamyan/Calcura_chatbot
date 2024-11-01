@@ -1,4 +1,3 @@
-// Predefined responses
 const responses = {
     "hello": "Hello there! 😊 How can I brighten your day?",
     "how are you": "I'm doing wonderfully, thank you! How about you? ",
@@ -15,22 +14,19 @@ const responses = {
     "tell me a joke": "Why did the math book look sad? Because it had too many problems! 😄"
 };
 
-// Function to evaluate multiple math expressions
 function evaluateMath(expressions) {
     const results = [];
     
-    // Split by newlines to handle multiple expressions
     const individualExpressions = expressions.split('\n').map(expr => expr.trim());
 
     for (const expr of individualExpressions) {
         // If the line starts with "Calculate", respond accordingly
         if (expr.toLowerCase().startsWith("calculate")) {
             results.push("Math helper is on! I'm ready to answer your calculations. Please enter your expressions below: ");
-            continue; // Skip further processing for this line
+            continue;
         }
 
-        // Evaluate the expression if it doesn't start with "Calculate"
-        const calculation = expr.trim(); // Trim any whitespace
+        const calculation = expr.trim(); 
         if (calculation) {
             try {
                 const result = eval(calculation);
@@ -41,27 +37,23 @@ function evaluateMath(expressions) {
         }
     }
 
-    return results.join('\n'); // Return results joined by newlines
+    return results.join('\n'); 
 }
 
-// Function to get a response
 function getResponse(userMessage) {
     userMessage = userMessage.toLowerCase();
     
-    // Check for conversational responses
     for (const keyword in responses) {
         if (userMessage.includes(keyword)) {
             return responses[keyword];
         }
     }
 
-    // If the user is asking for a calculation, handle it specifically
     if (userMessage.startsWith("calculate")) {
         return evaluateMath(userMessage);
     }
 
-    // Check if the input is a math expression
-    const mathRegex = /^[\d\s\+\-\*\/\(\)]+$/; // Regex to identify math expressions
+    const mathRegex = /^[\d\s\+\-\*\/\(\)]+$/; 
     if (mathRegex.test(userMessage)) {
         const result = eval(userMessage);
         return `${userMessage} = ${result}`;
@@ -70,36 +62,29 @@ function getResponse(userMessage) {
     return "I'm sorry, I don't quite understand that. But I'm here to help! ";
 }
 
-// Send message function
 function sendMessage() {
     const userInput = document.getElementById('userInput');
     const messageText = userInput.value.trim();
     if (messageText === '') return;
 
-    // Create user message element
     const chatbox = document.getElementById('chatbox');
     const userMessage = document.createElement('div');
     userMessage.className = 'message user-message';
     userMessage.textContent = messageText;
     chatbox.appendChild(userMessage);
 
-    // Clear input
     userInput.value = '';
 
-    // Get AI response
     const aiResponseText = getResponse(messageText);
     
-    // Create AI response element
     const aiResponse = document.createElement('div');
     aiResponse.className = 'message ai-message';
     aiResponse.textContent = aiResponseText;
     chatbox.appendChild(aiResponse);
 
-    // Scroll to bottom of chatbox
     chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-// Event listeners
 document.getElementById('sendButton').addEventListener('click', sendMessage);
 document.getElementById('userInput').addEventListener('keydown', function(event) {
     if (event.key === 'Enter' && !event.shiftKey) {
